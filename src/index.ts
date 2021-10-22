@@ -1,11 +1,18 @@
-import express, { Response } from "express";
+import express from "express";
+import { Routes } from "./routes/index";
+
+const cors = require('cors');
 const app = express();
 
-app.get('/', (req, res: Response) => {
-    console.log('get route1');
-    res.json(["sample"]);
-})
+app.use(cors());
+app.use(express.json());
 
 app.listen("4200", () => {
+    const routes = new Routes(app);
+
+    routes.initializeRoutesInstances();
     console.log('Server is running');
 })
+
+
+
