@@ -9,6 +9,9 @@ const cors = require('cors');
 const app = (0, express_1.default)();
 app.use(cors());
 app.use(express_1.default.json());
+app.get('/islive', (req, res) => {
+    res.send("api is live");
+});
 app.listen("4200", () => {
     const routes = new index_1.Routes(app);
     routes.initializeRoutesInstances();
