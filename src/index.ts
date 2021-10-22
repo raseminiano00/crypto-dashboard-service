@@ -7,10 +7,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get('/islive',(req,res) => {
+app.get('/islive', (req, res) => {
     res.send("api is live");
 });
-app.listen("4200", () => {
+app.listen(process.env.PORT || "4200", () => {
     const routes = new Routes(app);
 
     routes.initializeRoutesInstances();
