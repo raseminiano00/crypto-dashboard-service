@@ -10,11 +10,11 @@ app.use(express.json());
 app.get('/islive', (req, res) => {
     res.send("api is live");
 });
-app.listen(process.env.PORT || "4200", () => {
+app.listen(process.env.PORT || "4300", () => {
     const routes = new Routes(app);
 
     routes.initializeRoutesInstances();
-    console.log('Server is running on port: ', process.env.PORT || "4200");
+    console.log('Server is running on port: ', process.env.PORT || "4300");
 })
 
 
