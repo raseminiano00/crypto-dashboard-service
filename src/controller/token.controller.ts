@@ -14,6 +14,7 @@ export class TokenController {
         });
     }
     async getTokenCurrentDetails(request: Request, response: Response): Promise<Response> {
+        console.log(request);
         const apiUrl = "https://api.coingecko.com/api/v3/coins/smooth-love-potion?localization=false&tickers=false&community_data=false&developer_data=false&sparkline=false";
         const apiResponse = await this.axiosClient.get(apiUrl);
         const result = this.tokenService.getTokenCurrentDetails(apiResponse);

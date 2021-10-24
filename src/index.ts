@@ -14,7 +14,7 @@ app.listen(process.env.PORT || "4200", () => {
     const routes = new Routes(app);
 
     routes.initializeRoutesInstances();
-    console.log('Server is running');
+    console.log('Server is running on port: ', process.env.PORT || "4200");
 })
 
 
